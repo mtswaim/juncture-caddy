@@ -9,6 +9,13 @@ class ArticlesController < ApplicationController
     end
   end
 
+  # Get /articles
+  def index
+    @articles = Article.all
+    render json: @articles
+  end
+
+
   private
 
   def article_params
