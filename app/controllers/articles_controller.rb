@@ -15,6 +15,11 @@ class ArticlesController < ApplicationController
     render json: @articles
   end
 
+  # GET /articles/{id}
+  def show
+    @article = Article.find(params[:id])
+    render json: @article
+  end
 
   private
 
