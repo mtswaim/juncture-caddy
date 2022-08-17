@@ -15,10 +15,20 @@ class ArticlesController < ApplicationController
     render json: @articles
   end
 
-  # GET /articles/{id}
+  # GET /articles/:id
   def show
     @article = Article.find(params[:id])
     render json: @article
+  end
+
+  # DELETE /articles/:id
+  def destroy
+    render error: { error: 'This public API does not allow articles to be deleted or modified' }, status: 405
+  end
+
+  # PUT/PATCH /articles/:id
+  def update
+    render error: { error: 'This public API does not allow articles to be deleted or modified' }, status: 405
   end
 
   private
