@@ -9,7 +9,7 @@ class ArticlesController < ApplicationController
     end
   end
 
-  # Get /articles
+  # GET /articles
   def index
     @articles = Article.all
     render json: @articles
